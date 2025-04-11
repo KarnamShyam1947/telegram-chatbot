@@ -32,11 +32,10 @@ class User(Base):
             "chat_id" : self.chat_id,
             "address" : self.address,
             "complaint" : self.complaint,
-            "crime_type" : self.crime_type,
+            "crime" : f"{self.crime_type}, {self.crime_subtype}",
             "phone_number" : self.phone_number,
             "evidence_url" : self.evidence_url,
             "status" : self.status,
-            "crime_subtype" : self.crime_subtype,
             "police_station" : self.police_station,
             "case_number" : self.case_number,
             "datetime" : self.datetime.isoformat() if self.datetime else None

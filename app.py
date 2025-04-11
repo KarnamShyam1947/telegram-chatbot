@@ -1,15 +1,15 @@
 from DBUtils import get_all_users, read_user_by_case_number, update_case_status
 from flask import Flask, request
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.get("/api/v1/crimes")
 def get_all_commands():
     users = get_all_users()
-    print(users)
     
     json_resp = [user.to_dict() for user in users]
-    print(json_resp)
 
     return json_resp
 
